@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="margin_top">15dp</dimen>
+    <dimen name="photo_width">1000dp</dimen>
+    <dimen name="photo_height">500dp</dimen>
+    <dimen name="description_text_size">15sp</dimen>
+    <dimen name="bottom_sheet_height">40dp</dimen>
+</resources>

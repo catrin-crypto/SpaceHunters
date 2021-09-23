@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="photo_of_the_day_text">#070797</color>
+    <color name="chip_text_color">#E8D95A</color>
+    <color name="two_days_ago_back_color">#381F65</color>
+    <color name="yesterday_back_color">#2B3B95</color>
+    <color name="today_back_color">#0E70BD</color>
+    <color name="bottom_sheet_background">#DFFDF8CC</color>
+</resources>

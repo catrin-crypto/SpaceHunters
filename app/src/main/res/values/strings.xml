@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Space Hunters</string>
+    <string name="photo_of_the_day">Photo of the day</string>
+    <string name="date_of_creation">Date of creation</string>
+    <string name="description_text">Description of photo</string>
+    <string name="oops_error_occured">Oops! Error occured</string>
+    <string name="search_wiki">search Wiki</string>
+    <string name="wiki_helper_text">Wiki helper</string>
+    <string name="two_days_ago">Two Days Ago</string>
+    <string name="one_day_ago">One Day Ago</string>
+    <string name="today">Today</string>
+    <string name="picture_description_will_load_here">Picture Description will load here</string>
+</resources>
