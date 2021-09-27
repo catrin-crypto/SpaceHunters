@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settings_layout"
+    tools:context=".main.ui.SettingsFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/choose_theme_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/text_size"
+        android:text="@string/choose_your_spacehunters_app_theme" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/choose_theme_rg"
+        app:layout_constraintTop_toBottomOf="@id/choose_theme_tv">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/marsian_theme_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/marsian_theme"
+            android:textSize="@dimen/description_text_size"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/standard_cosmic_theme_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/standard_cosmic_theme"
+            android:textSize="@dimen/description_text_size"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/default_theme_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_theme"
+            android:textSize="@dimen/description_text_size"/>
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

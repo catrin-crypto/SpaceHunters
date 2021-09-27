@@ -1,5 +1,6 @@
 package com.example.spacehunters.main.model.entities
 
+import com.example.spacehunters.BuildConfig
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
@@ -16,7 +17,7 @@ object ApiUtils {
         httpClient.addInterceptor { chain ->
             val original = chain.request()
             val request = original.newBuilder()
-                .header("api_key", "dqOwzkp1Utb6rCBM1Y9Ov9QrQ5JBIW8foOuvWRgb")
+                .header("api_key", BuildConfig.NASA_API_KEY)
                 .method(original.method(), original.body())
                 .build()
 

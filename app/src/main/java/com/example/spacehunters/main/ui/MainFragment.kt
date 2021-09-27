@@ -27,6 +27,12 @@ class MainFragment : Fragment() {
     private val viewModel: MainViewModel by viewModel()
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,9 +49,9 @@ class MainFragment : Fragment() {
         binding.chipGroup.setSingleSelection(true);
         binding.chipGroup.setOnCheckedChangeListener { chipGroup, id ->
             when (id) {
-                R.id.chip_two_days_ago -> viewModel.loadData(2)
-                R.id.chip_yesterday -> viewModel.loadData(1)
-                R.id.chip_today -> viewModel.loadData()
+                chip_two_days_ago -> viewModel.loadData(2)
+                chip_yesterday -> viewModel.loadData(1)
+                chip_today -> viewModel.loadData()
             }
         }
 
@@ -95,13 +101,14 @@ class MainFragment : Fragment() {
 
     private fun setDefaultImage() = with(binding) {
         photoOfTheDay.setImageResource(R.drawable.orion_nebula)
-        Toast.makeText(context, "Nasa's got no photo this day(", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getString(R.string.no_photo_this_day), Toast.LENGTH_LONG).show()
     }
 
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-        bottomSheetBehavior.setHideable(true);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+        bottomSheetBehavior.setHideable(true)
+        bottomSheetBehavior.isDraggable
     }
 
     companion object {

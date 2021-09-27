@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MarsianTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/marsian_theme_color_primary</item>
+        <item name="colorPrimaryDark">@color/marsian_theme_primary_dark</item>
+        <item name="colorAccent">@color/marsian_theme_color_accent</item>
+        <item name="android:textColorPrimary">@color/marsian_theme_text_color_primary</item>
+        <item name="android:textColorSecondary">@color/marsian_theme_text_color_secondary</item>
+
+    </style>
+
+    <style name="StandardCosmicTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/cosmic_theme_color_primary</item>
+        <item name="colorPrimaryDark">@color/cosmic_theme_color_primary_dark</item>
+        <item name="colorAccent">@color/cosmic_theme_color_accent</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/cosmic_theme_text_color_secondary</item>
+    </style>
+</resources>

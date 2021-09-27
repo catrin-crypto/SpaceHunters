@@ -13,4 +13,19 @@
     <color name="yesterday_back_color">#2B3B95</color>
     <color name="today_back_color">#0E70BD</color>
     <color name="bottom_sheet_background">#DFFDF8CC</color>
+
+    <color name="marsian_theme_color_primary">#BAAA563C</color>
+    <color name="marsian_theme_primary_dark">#F29A4D35</color>
+    <color name="marsian_theme_color_accent">#E2ECAE53</color>
+    <color name="marsian_theme_text_color_primary">#B4000000</color>
+    <color name="marsian_theme_text_color_secondary">#92000000</color>
+
+    <color name="cosmic_theme_color_primary">#8C6BC6</color>
+    <color name="cosmic_theme_color_primary_dark">#674F91</color>
+    <color name="cosmic_theme_color_accent">#C0A0F8</color>
+    <color name="cosmic_theme_text_color_primary">@color/black</color>
+    <color name="cosmic_theme_text_color_secondary">#35428C</color>
+
+
+
 </resources>

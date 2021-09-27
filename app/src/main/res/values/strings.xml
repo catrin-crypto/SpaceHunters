@@ -10,4 +10,14 @@
     <string name="one_day_ago">One Day Ago</string>
     <string name="today">Today</string>
     <string name="picture_description_will_load_here">Picture Description will load here</string>
+    <string name="settings">settings</string>
+    <string name="main">main</string>
+    <string name="favorites">favorites</string>
+    <string name="choose_your_spacehunters_app_theme">Choose your SpaceHunters App theme</string>
+    <string name="marsian_theme">Marsian theme</string>
+    <string name="standard_cosmic_theme">Standard cosmic theme</string>
+    <string name="default_theme">Default theme</string>
+    <string name="picture_of_the_day">Picture of the day</string>
+    <string name="no_description">No description</string>
+    <string name="no_photo_this_day">Nasa\'s got no photo this day(</string>
 </resources>
