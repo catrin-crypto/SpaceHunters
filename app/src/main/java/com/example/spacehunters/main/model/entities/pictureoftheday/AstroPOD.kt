@@ -1,4 +1,4 @@
-package com.example.spacehunters.main.model.entities
+package com.example.spacehunters.main.model.entities.pictureoftheday
 
 import android.content.Context
 import android.content.res.Resources

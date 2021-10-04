@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.ui.PhotoFromMarsFragment">
+
+<!--    <DatePicker-->
+<!--        android:id="@+id/inputDate"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:calendarViewShown="false"-->
+<!--        android:datePickerMode="spinner" />-->
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbarStyle="outsideInset"
+    android:id="@+id/scroll_view_mars">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mars_linear_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="@dimen/description_text_size"
+            android:textColor="@color/black"
+            android:text="@string/choose_the_date_from_the_period_of_fhaz_camera_mission_06_08_2012_03_06_2015"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarIcon_plus_chosen_date_tv"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/calendar_icon_image_view"
+            android:src="@drawable/ic_baseline_edit_calendar_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_chosen_date_tv"
+            android:textSize="@dimen/description_text_size"
+            android:textStyle="italic"/>
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/photo_from_mars_and_id_layout">
+        <ImageView
+            android:id="@+id/image_view_mars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_gravity= "center"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/mars_photo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/photo_from_mars_id"
+            android:textSize="@dimen/text_size"
+            android:textStyle="italic"/>
+</LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+</FrameLayout>

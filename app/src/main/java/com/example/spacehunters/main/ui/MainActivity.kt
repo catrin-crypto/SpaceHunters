@@ -23,6 +23,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId){
+                R.id.bottom_view_earth -> {
+                    //openFragment(EpicPhotosFragment.newInstance())
+                    Toast.makeText(applicationContext, "Doesn't work!!!", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.bottom_view_mars -> {
+                    openFragment(PhotoFromMarsFragment.newInstance())
+                    true
+                }
+                R.id.bottom_view_cosmic_weather -> {
+                    Toast.makeText(applicationContext, "Cosmic weather fragment", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
+            }
+        }
+        //binding.bottomNavigationView.selectedItemId = R.id.bottom_view_earth
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MainFragment.newInstance())

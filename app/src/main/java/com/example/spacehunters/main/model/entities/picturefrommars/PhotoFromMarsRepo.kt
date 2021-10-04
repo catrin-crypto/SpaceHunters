@@ -1,16 +1,19 @@
-package com.example.spacehunters.main.model.entities
+package com.example.spacehunters.main.model.entities.picturefrommars
 
+import com.example.spacehunters.main.model.entities.ApiUtils
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object PictureOfTheDayRepo {
-    val api: PictureOfTheDayApi by lazy {
+object PhotoFromMarsRepo {
+    val marsApi: PhotoFromMarsApi by lazy {
+
         val adapter = Retrofit.Builder()
             .baseUrl(ApiUtils.baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .client(ApiUtils.getOkHTTPBuilderWithHeaders())
             .build()
 
-        adapter.create(PictureOfTheDayApi::class.java)
+        adapter.create(PhotoFromMarsApi::class.java)
+
     }
 }

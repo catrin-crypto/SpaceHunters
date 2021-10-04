@@ -79,7 +79,7 @@
             app:counterEnabled="true"
             app:counterMaxLength="25"
             app:helperText="@string/wiki_helper_text"
-            app:layout_constraintTop_toBottomOf="@id/creationDate"
+            app:layout_constraintTop_toBottomOf="@id/photo_desсription"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:endIconMode="custom"
@@ -130,7 +130,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/photo_of_the_day" />
 
-<!--    <HorizontalScrollView-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/photo_desсription"
+            android:layout_marginTop="@dimen/margin_top"
+            android:textSize="@dimen/description_text_size"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/creationDate"
+                    />
+        <!--    <HorizontalScrollView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
@@ -139,7 +150,7 @@
 <!--        android:id="@+id/scroll_view"-->
 <!--        >-->
 <!--        <TextView-->
-<!--            android:id="@+id/photo_desription"-->
+<!--            android:id="@+id/photo_desсription"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
 <!--            android:layout_marginTop="@dimen/margin_top"-->
@@ -157,29 +168,29 @@
 
 <!--    <include layout="@layout/bottom_sheet_description"/>-->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bottom_sheet_description_container"
-        android:background="@color/bottom_sheet_background"
-        app:behavior_hideable="true"
-        app:behavior_draggable="true"
-        app:behavior_peekHeight="@dimen/bottom_sheet_height"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/bottom_sheet_description_container"-->
+<!--        android:background="@color/bottom_sheet_background"-->
+<!--        app:behavior_hideable="true"-->
+<!--        app:behavior_draggable="true"-->
+<!--        app:behavior_peekHeight="@dimen/bottom_sheet_height"-->
+<!--        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">-->
 
-        <TextView
-            android:id="@+id/photo_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top"
-            android:textSize="@dimen/description_text_size"
-            android:textStyle="italic"
-            android:text="@string/picture_description_will_load_here"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="@string/description_text" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/photo_description"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/margin_top"-->
+<!--            android:textSize="@dimen/description_text_size"-->
+<!--            android:textStyle="italic"-->
+<!--            android:text="@string/picture_description_will_load_here"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            tools:text="@string/description_text" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <TextView
         android:id="@+id/errorTV"

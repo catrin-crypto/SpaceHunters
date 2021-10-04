@@ -3,7 +3,6 @@ package com.example.spacehunters.main.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,21 +10,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.constraintlayout.widget.ConstraintLayout
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.spacehunters.R
 import com.example.spacehunters.R.id.*
 import com.example.spacehunters.databinding.MainFragmentBinding
 import com.example.spacehunters.main.AppState
-import com.example.spacehunters.main.model.entities.AstroPOD
-import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
 class MainFragment : Fragment() {
     private var _binding: MainFragmentBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModel()
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
+  //  private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +42,7 @@ class MainFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setBottomSheetBehavior(binding.bottomSheetDescriptionContainer)
+    //    setBottomSheetBehavior(binding.bottomSheetDescriptionContainer)
         binding.chipGroup.setSingleSelection(true);
         binding.chipGroup.setOnCheckedChangeListener { chipGroup, id ->
             when (id) {
@@ -69,6 +66,7 @@ class MainFragment : Fragment() {
                         mainView.visibility = View.INVISIBLE
                         loadingLayout.visibility = View.GONE
                         errorTV.visibility = View.VISIBLE
+                        errorTV.text = errorTV.text.toString() + appState.error.toString()
                     }
                     AppState.Loading -> {
                         mainView.visibility = View.INVISIBLE
@@ -78,10 +76,21 @@ class MainFragment : Fragment() {
                         loadingLayout.visibility = View.GONE
                         mainView.visibility = View.VISIBLE
                         photoTitle.text = appState.photoOfTheDay.title
-                        appState.photoOfTheDay.image.let {
-                            Picasso.get().load(it).into(photoOfTheDay)
+                        appState.photoOfTheDay.image?.let {
+                            Picasso.get()
+                                .load(it)
+                                .into(photoOfTheDay, object : Callback {
+                                    override fun onSuccess() {
+                                        //Toast.makeText(context,"success",Toast.LENGTH_LONG).show()
+                                    }
+
+                                    override fun onError(e: Exception?) {
+                                        Toast.makeText(context,"error:" + e.toString(),Toast.LENGTH_LONG).show()
+                                        e?.printStackTrace()
+                                    }
+                                })
                         }
-                        photoDescription.text = appState.photoOfTheDay.description
+                        photoDesRiption.text = appState.photoOfTheDay.description
                         creationDate.text = appState.photoOfTheDay.date
                         if (appState.photoOfTheDay.image == null) {
                             setDefaultImage()
@@ -104,12 +113,12 @@ class MainFragment : Fragment() {
         Toast.makeText(context, getString(R.string.no_photo_this_day), Toast.LENGTH_LONG).show()
     }
 
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
-        bottomSheetBehavior.setHideable(true)
-        bottomSheetBehavior.isDraggable
-    }
+//    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
+//        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+//        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+//        bottomSheetBehavior.setHideable(true)
+//        bottomSheetBehavior.isDraggable
+//    }
 
     companion object {
         const val BUNDLE_EXTRA = "pictureOfTheDay"

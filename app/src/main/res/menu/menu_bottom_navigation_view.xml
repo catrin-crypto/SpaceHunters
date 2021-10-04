@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/bottom_view_earth"
+    android:title="@string/earth"
+    android:icon="@drawable/ic_baseline_public_24"
+       />
+    <item
+        android:id="@+id/bottom_view_mars"
+        android:title="@string/mars"
+        android:icon="@drawable/ic_baseline_public_24"
+        />
+    <item
+        android:id="@+id/bottom_view_cosmic_weather"
+        android:title="@string/cosmic_weather"
+        android:icon="@drawable/ic_baseline_public_24"
+        />
+</menu>
