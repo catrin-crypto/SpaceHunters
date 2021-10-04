@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when(item.itemId){
                 R.id.bottom_view_earth -> {
-                    //openFragment(EpicPhotosFragment.newInstance())
-                    Toast.makeText(applicationContext, "Doesn't work!!!", Toast.LENGTH_SHORT).show()
+                    openFragment(EpicPhotosFragment.newInstance())
+                   // Toast.makeText(applicationContext, "Doesn't work!!!", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.bottom_view_mars -> {

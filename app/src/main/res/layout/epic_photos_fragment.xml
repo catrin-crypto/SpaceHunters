@@ -42,8 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/user_chosen_date_epic_tv"
             android:textSize="@dimen/description_text_size"
-            android:textStyle="italic"
-            android:text="@string/photo_of_the_day"/>
+            android:textStyle="italic"/>
 
     </LinearLayout>
 

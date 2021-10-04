@@ -12,6 +12,6 @@ interface EpicPhotosApi {
     fun getEpicPhotos(
         @Path("date") date : String,
         @Query("api_key") apiKey: String,
-    ) : Call<EpicPhotoDTOarray>
+    ) : Call<ArrayList<EpicPhotosDTO>>
 
 }

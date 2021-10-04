@@ -6,6 +6,6 @@ data class EpicPhotosDTO(
     val image: String
 )
 
-data class EpicPhotoDTOarray(
-    val photos : ArrayList<EpicPhotosDTO>
-)
+//data class EpicPhotoDTOarray(
+//    val photos : ArrayList<EpicPhotosDTO>
+//)

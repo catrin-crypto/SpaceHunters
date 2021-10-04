@@ -50,21 +50,19 @@ class EpicPhotosFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         selectedDate = getString(R.string.epic_default_date)
         binding.epicCalendarIconImageView.setOnClickListener({
-            val year = 2021
-            val month = 6
-            val day = 3
+            val year = 2019
+            val month = 5
+            val day = 30
             this.context?.let { context ->
                 val dpd = DatePickerDialog(
                     context,
                     { view, year, monthOfYear, dayOfMonth ->
                         selectedDate =
-                            "" + year.toString() + "-" + (monthOfYear+1).toString() + "-" + dayOfMonth.toString()
+                            "" + String.format("%04d",year) + "-" + String.format("%02d", (monthOfYear+1)) + "-" + String.format("%02d",dayOfMonth)
                         loadChosenData()
                     }
-                        , year, month, day
+                        , year, month - 1, day
                 )
-               // dpd.datePicker.minDate = Date(2012 -1900, 8 - 1, 6).time
-               // dpd.datePicker.maxDate = Date(2015 -1900, 6 - 1, 3).time
                 dpd.show()
             }
         })
@@ -78,10 +76,14 @@ class EpicPhotosFragment : Fragment() {
                     }
 
                     is AppState.SuccessEpic -> {
-                        adapter = EpicFragmentAdapter().apply{
-                            setPhotos(appState.photos)
+                        if (epicFragmentRecyclerView.adapter == null)
+                        {
+                            adapter = EpicFragmentAdapter()
+                            epicFragmentRecyclerView.adapter = adapter
                         }
-                        epicFragmentRecyclerView.adapter = adapter
+                        adapter?.let{
+                            it.setPhotos(appState.photos)
+                        }
                     }
                 }
             })

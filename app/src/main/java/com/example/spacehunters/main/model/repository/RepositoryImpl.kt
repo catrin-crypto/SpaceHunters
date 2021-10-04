@@ -12,6 +12,8 @@ import com.example.spacehunters.main.model.entities.picturefrommars.PhotoFromMar
 import com.example.spacehunters.main.model.entities.picturefrommars.PhotoFromMarsRepo
 import com.example.spacehunters.main.model.entities.pictureoftheday.PictureOfTheDayRepo
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -48,19 +50,20 @@ class RepositoryImpl : Repository{
         return marsArr
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SimpleDateFormat")
     override fun getEpicPhotos(date: String): ArrayList<EpicPhoto> {
-        val dto = EpicPhotosRepo.epicApi.getEpicPhotos(BuildConfig.NASA_API_KEY, date)
+        val dto = EpicPhotosRepo.epicApi.getEpicPhotos( date, BuildConfig.NASA_API_KEY)
             .execute()
             .body()
         var epicArr = ArrayList<EpicPhoto>()
-        var chosenDate = Date(date)
+        //var chosenDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"))
         dto?.let {
-            for (photo in it.photos){
+            for (photo in it){
                 epicArr.add(EpicPhoto(caption = photo.caption,
                     imageUrl = "https://api.nasa.gov/EPIC/archive/natural/"+
-                            SimpleDateFormat("yyyy/MM/dd/").format(chosenDate)+
-                            "png/" + photo.image + ".png?api_key=" + BuildConfig.NASA_API_KEY
+                            date.replace("-","/") + //SimpleDateFormat("yyyy/MM/dd/").format(chosenDate)+
+                            "/png/" + photo.image + ".png?api_key=" + BuildConfig.NASA_API_KEY
                             ))
             }
         }
