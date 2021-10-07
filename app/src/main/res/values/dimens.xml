@@ -9,4 +9,5 @@
     <dimen name="margin_bottom_epic_choose_date_tv">6dp</dimen>
     <dimen name="epic_caption_padding">5dp</dimen>
     <dimen name="epic_recycler_items_selector">1dp</dimen>
+    <dimen name="view_width_for_constraint_percent">0dp</dimen>
 </resources>

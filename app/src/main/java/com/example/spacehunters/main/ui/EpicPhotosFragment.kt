@@ -8,23 +8,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.spacehunters.R
 import com.example.spacehunters.databinding.EpicPhotosFragmentBinding
-import com.example.spacehunters.databinding.PhotoFromMarsFragmentBinding
 import com.example.spacehunters.main.AppState
 import com.example.spacehunters.main.ui.adapters.EpicFragmentAdapter
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.*
 
 
 class EpicPhotosFragment : Fragment() {
-    private var _binding : EpicPhotosFragmentBinding? = null
+    private var _binding: EpicPhotosFragmentBinding? = null
     private val binding get() = _binding!!
     private val viewModel: EpicPhotosViewModel by viewModel()
     private var selectedDate: String = ""
@@ -37,6 +32,7 @@ class EpicPhotosFragment : Fragment() {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,9 +41,12 @@ class EpicPhotosFragment : Fragment() {
         return binding.root
 
     }
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val duration: Long = 3000
+        binding.chooseEpicDateTv.animate().x(200f).setDuration(duration)
         selectedDate = getString(R.string.epic_default_date)
         binding.epicCalendarIconImageView.setOnClickListener({
             val year = 2019
@@ -58,10 +57,12 @@ class EpicPhotosFragment : Fragment() {
                     context,
                     { view, year, monthOfYear, dayOfMonth ->
                         selectedDate =
-                            "" + String.format("%04d",year) + "-" + String.format("%02d", (monthOfYear+1)) + "-" + String.format("%02d",dayOfMonth)
+                            "" + String.format("%04d", year) + "-" + String.format(
+                                "%02d",
+                                (monthOfYear + 1)
+                            ) + "-" + String.format("%02d", dayOfMonth)
                         loadChosenData()
-                    }
-                        , year, month - 1, day
+                    }, year, month - 1, day
                 )
                 dpd.show()
             }
@@ -71,17 +72,20 @@ class EpicPhotosFragment : Fragment() {
             viewModel.liveDataToObserve.observe(viewLifecycleOwner, { appState ->
                 when (appState) {
                     is AppState.Error -> {
-                        Toast.makeText(context, "Error : " + appState.error.toString() , Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            context,
+                            "Error : " + appState.error.toString(),
+                            Toast.LENGTH_LONG
+                        ).show()
                         appState.error.printStackTrace();
                     }
 
                     is AppState.SuccessEpic -> {
-                        if (epicFragmentRecyclerView.adapter == null)
-                        {
+                        if (epicFragmentRecyclerView.adapter == null) {
                             adapter = EpicFragmentAdapter()
                             epicFragmentRecyclerView.adapter = adapter
                         }
-                        adapter?.let{
+                        adapter?.let {
                             it.setPhotos(appState.photos)
                         }
                     }
@@ -96,10 +100,12 @@ class EpicPhotosFragment : Fragment() {
         binding.userChosenDateEpicTv.text = selectedDate
         viewModel.loadData(selectedDate)
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
     companion object {
         fun newInstance() = EpicPhotosFragment()
     }

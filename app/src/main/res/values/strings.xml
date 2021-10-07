@@ -31,4 +31,7 @@
     <string name="no_caption_no_description_epic">No description provided(</string>
     <string name="earth_photo_from_nasa_epic_collection">Earth photo from NASA EPIC collection</string>
     <string name="epic_default_date">2019-05-30</string>
+    <string name="spacehunters_is_a_fantastic_application_specially_developed_for_each_space_lover_of_this_universe_take_a_look_at_theese_photos_from_the_great_red_planet_mars_it_could_probably_become_a_new_home_for_the_humanity_someday">SpaceHunters is a fantastic application, specially developed for each space lover of this Universe. Take a look at theese photos from the great red planet Mars. It could probably become a new home for the humanity someday.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
