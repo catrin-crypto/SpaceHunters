@@ -9,51 +9,41 @@
 
     <TextView
         android:id="@+id/choose_epic_date_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/epic_calendar_icon_image_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:textSize="@dimen/description_text_size"
-        android:textColor="@color/black"
-        android:text="@string/tap_calendar_icon_and_choose_the_date"
+        android:layout_marginTop="@dimen/margin_bottom_epic_choose_date_tv"
         android:layout_marginBottom="@dimen/margin_bottom_epic_choose_date_tv"
-        android:layout_marginTop="@dimen/margin_bottom_epic_choose_date_tv"/>
+        android:text="@string/tap_calendar_icon_and_choose_the_date"
+        android:textColor="@color/black"
+        android:textSize="@dimen/description_text_size"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/epic_calendar_icon_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/epic_calendarIcon_plus_chosen_date_linear_layout"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/choose_epic_date_tv"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_marginBottom="@dimen/margin_bottom_epic_choose_date_tv">-->
+    <ImageView
+        android:id="@+id/epic_calendar_icon_image_view"
+        android:layout_width="@dimen/view_width_for_constraint_percent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_edit_calendar_24"
+        app:layout_constraintEnd_toStartOf="@id/user_chosen_date_epic_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_epic_date_tv"
+        app:layout_constraintWidth_percent="0.4"
+        tools:ignore="Suspicious0dp" />
 
-        <ImageView
-            android:layout_width="@dimen/view_width_for_constraint_percent"
-            android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/choose_epic_date_tv"
-            app:layout_constraintEnd_toStartOf="@id/user_chosen_date_epic_tv"
-            android:id="@+id/epic_calendar_icon_image_view"
-            android:src="@drawable/ic_baseline_edit_calendar_24"
-            tools:ignore="Suspicious0dp" />
-        <TextView
-            android:layout_width="@dimen/view_width_for_constraint_percent"
-            android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent="0.6"
-            app:layout_constraintTop_toBottomOf="@id/choose_epic_date_tv"
-            app:layout_constraintStart_toEndOf="@id/epic_calendar_icon_image_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/user_chosen_date_epic_tv"
-            android:textSize="@dimen/description_text_size"
-            android:textStyle="italic"/>
+    <TextView
+        android:id="@+id/user_chosen_date_epic_tv"
+        android:layout_width="@dimen/view_width_for_constraint_percent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/description_text_size"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/epic_calendar_icon_image_view"
+        app:layout_constraintTop_toBottomOf="@id/choose_epic_date_tv"
+        app:layout_constraintWidth_percent="0.6" />
 
-<!--    </LinearLayout>-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/epic_fragment_recycler_view"
         android:layout_width="match_parent"

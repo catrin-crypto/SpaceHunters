@@ -6,9 +6,9 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.spacehunters.main.AppState
-import com.example.spacehunters.main.model.repository.Repository
+import com.example.spacehunters.main.model.repository.NetworkRepository
 
-class EpicPhotosViewModel(private val repository: Repository) : ViewModel(), LifecycleObserver {
+class EpicPhotosViewModel(private val repository: NetworkRepository) : ViewModel(), LifecycleObserver {
     val liveDataToObserve : MutableLiveData<AppState> = MutableLiveData()
 
     @RequiresApi(Build.VERSION_CODES.O)

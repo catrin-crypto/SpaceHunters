@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/coordinator_layout"
-    android:background="@color/white"
-    android:clickable="true"
-    android:focusable="true">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main_view"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -141,76 +129,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/creationDate"
                     />
-        <!--    <HorizontalScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/creationDate"-->
-<!--        android:id="@+id/scroll_view"-->
-<!--        >-->
-<!--        <TextView-->
-<!--            android:id="@+id/photo_desсription"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/margin_top"-->
-<!--            android:textSize="@dimen/description_text_size"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-
-<!--            tools:text="@string/description_text" />-->
-<!--    </HorizontalScrollView>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
-<!--    <include layout="@layout/bottom_sheet_description"/>-->
-
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/bottom_sheet_description_container"-->
-<!--        android:background="@color/bottom_sheet_background"-->
-<!--        app:behavior_hideable="true"-->
-<!--        app:behavior_draggable="true"-->
-<!--        app:behavior_peekHeight="@dimen/bottom_sheet_height"-->
-<!--        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/photo_description"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/margin_top"-->
-<!--            android:textSize="@dimen/description_text_size"-->
-<!--            android:textStyle="italic"-->
-<!--            android:text="@string/picture_description_will_load_here"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            tools:text="@string/description_text" />-->
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-    <TextView
-        android:id="@+id/errorTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/oops_error_occured"
-        android:visibility="invisible"/>
-
-    <FrameLayout
-        android:id="@+id/loadingLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        tools:visibility="visible">
-
-        <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-    </FrameLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>

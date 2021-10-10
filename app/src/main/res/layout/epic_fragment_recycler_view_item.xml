@@ -21,12 +21,12 @@
         android:id="@+id/recycler_item_epic_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity= "center"
+        android:layout_gravity="center"
+        android:contentDescription="@string/earth_photo_from_nasa_epic_collection"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_item_epic_caption"
-        android:contentDescription="@string/earth_photo_from_nasa_epic_collection"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycler_item_epic_caption" />
 
     <View
         android:layout_width="match_parent"

@@ -2,16 +2,13 @@ package com.example.spacehunters.main.ui
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.spacehunters.main.AppState
-import com.example.spacehunters.main.model.repository.Repository
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.spacehunters.main.model.repository.NetworkRepository
 
-class PhotoFromMarsViewModel(private val repository: Repository) : ViewModel(), LifecycleObserver {
+class PhotoFromMarsViewModel(private val repository: NetworkRepository) : ViewModel(), LifecycleObserver {
     val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData()
 
 

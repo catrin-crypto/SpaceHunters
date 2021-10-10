@@ -4,25 +4,33 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.transition.ChangeBounds
+import android.transition.TransitionManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnticipateOvershootInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.constraintlayout.widget.ConstraintSet
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.spacehunters.R
 import com.example.spacehunters.R.id.*
-import com.example.spacehunters.databinding.MainFragmentBinding
+import com.example.spacehunters.databinding.MainFragmentStartBinding
 import com.example.spacehunters.main.AppState
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import android.view.animation.Animation
+import android.view.animation.ScaleAnimation
+
 
 class MainFragment : Fragment() {
-    private var _binding: MainFragmentBinding? = null
+    private var _binding: MainFragmentStartBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModel()
-  //  private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
+    //  private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +42,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+        _binding = MainFragmentStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -42,7 +50,7 @@ class MainFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    //    setBottomSheetBehavior(binding.bottomSheetDescriptionContainer)
+        //    setBottomSheetBehavior(binding.bottomSheetDescriptionContainer)
         binding.chipGroup.setSingleSelection(true);
         binding.chipGroup.setOnCheckedChangeListener { chipGroup, id ->
             when (id) {
@@ -73,6 +81,7 @@ class MainFragment : Fragment() {
                         binding.loadingLayout.visibility = View.VISIBLE
                     }
                     is AppState.Success -> {
+                        animateComponents()
                         loadingLayout.visibility = View.GONE
                         mainView.visibility = View.VISIBLE
                         photoTitle.text = appState.photoOfTheDay.title
@@ -81,11 +90,15 @@ class MainFragment : Fragment() {
                                 .load(it)
                                 .into(photoOfTheDay, object : Callback {
                                     override fun onSuccess() {
-                                        //Toast.makeText(context,"success",Toast.LENGTH_LONG).show()
+                                        scaleView(photoOfTheDay, 0.01f, 1f)
                                     }
 
                                     override fun onError(e: Exception?) {
-                                        Toast.makeText(context,"error:" + e.toString(),Toast.LENGTH_LONG).show()
+                                        Toast.makeText(
+                                            context,
+                                            "error:" + e.toString(),
+                                            Toast.LENGTH_LONG
+                                        ).show()
                                         e?.printStackTrace()
                                     }
                                 })
@@ -100,7 +113,19 @@ class MainFragment : Fragment() {
             })
             viewModel.loadData()
         }
+    }
 
+    fun scaleView(v: View, startScale: Float, endScale: Float) {
+        val anim: Animation = ScaleAnimation(
+            startScale, endScale,  // Start and end values for the X axis scaling
+            startScale, endScale,  // Start and end values for the Y axis scaling
+            Animation.RELATIVE_TO_SELF, 0.5f,  // Pivot point of X scaling
+            Animation.RELATIVE_TO_SELF, 0.5f // Pivot point of Y scaling
+        )
+        anim.fillAfter = true // Needed to keep the result of the animation
+        anim.duration = 2000
+        anim.interpolator = DecelerateInterpolator()
+        v.startAnimation(anim)
     }
 
     override fun onDestroyView() {
@@ -125,7 +150,7 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-//    companion object {
+    //    companion object {
 //        const val BUNDLE_EXTRA = "pictureOfTheDay"
 //
 //        fun newInstance(bundle: Bundle): MainFragment {
@@ -134,5 +159,17 @@ class MainFragment : Fragment() {
 //            return fragment
 //        }
 //    }
+    private fun animateComponents() {
+        val constraintSet = ConstraintSet()
+        constraintSet.clone(context, R.layout.main_fragment_pod_loaded)
+
+        val transition = ChangeBounds()
+        transition.interpolator = AnticipateOvershootInterpolator(1.0f)
+        transition.duration = 1200
+
+        TransitionManager.beginDelayedTransition(binding.mainView, transition)
+        constraintSet.applyTo(binding.mainView)
+    }
+
 
 }

@@ -3,15 +3,12 @@ package com.example.spacehunters.main.ui
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.spacehunters.R
 import com.example.spacehunters.databinding.MainActivityBinding
-import kotlinx.parcelize.Parcelize
-
 
 val THEME_PROP_NAME: String = "AppTheme"
 
@@ -94,7 +91,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.action_favorites -> {
                 //TODO openFragment(FavouritesFragment.newInstance())
-                Toast.makeText(applicationContext, "Favourites will be here", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.toast_for_favourites_fragment),
+                    Toast.LENGTH_SHORT
+                )
                     .show()
                 true
             }
