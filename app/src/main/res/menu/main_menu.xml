@@ -19,5 +19,10 @@
         android:orderInCategory="10"
         android:title="@string/main"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_notes"
+        android:orderInCategory="15"
+        android:title="@string/notes"
+        app:showAsAction="never"/>
 
 </menu>

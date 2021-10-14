@@ -103,6 +103,10 @@ class MainActivity : AppCompatActivity() {
                 openFragment(MainFragment.newInstance())
                 true
             }
+            R.id.action_notes -> {
+                openFragment(NotesFragment.newInstance())
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

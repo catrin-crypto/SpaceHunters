@@ -38,8 +38,8 @@ class RepositoryImpl : NetworkRepository {
         var marsArr = ArrayList<PhotoFromMars>()
 
         dto?.let {
-
-            for (photo in it.photos) {
+//            for (photo in it.photos)
+            it.photos.forEach(){ photo ->
                 marsArr.add(PhotoFromMars(imgSrc = photo.imgSrc, id = photo.id))
             }
         }
