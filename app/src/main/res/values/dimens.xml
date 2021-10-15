@@ -11,4 +11,5 @@
     <dimen name="epic_recycler_items_selector">1dp</dimen>
     <dimen name="view_width_for_constraint_percent">0dp</dimen>
     <dimen name="notes_recycler_view_margin_top">15dp</dimen>
+    <dimen name="add_item_icon_margin">6dp</dimen>
 </resources>

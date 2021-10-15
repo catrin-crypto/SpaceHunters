@@ -18,8 +18,42 @@
         android:id="@+id/note_description"
         app:layout_constraintStart_toEndOf="@id/note_title"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/add_item_icon"
         android:textSize="@dimen/description_text_size"
         android:textStyle="italic"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_item_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/add_item_icon_margin"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/remove_item_icon"
+        app:layout_constraintTop_toBottomOf="@id/add_item_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/add_item_icon_margin"
+        android:src="@drawable/ic_baseline_remove_circle_outline_24"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/move_item_up_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/add_item_icon"
+        android:layout_margin="@dimen/add_item_icon_margin"
+        android:src="@drawable/ic_baseline_arrow_drop_up_24"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/move_item_down_icon"
+        app:layout_constraintTop_toBottomOf="@id/move_item_up_icon"
+        app:layout_constraintEnd_toStartOf="@id/remove_item_icon"
+        android:layout_margin="@dimen/add_item_icon_margin"
+        android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
