@@ -28,32 +28,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:text="@string/two_days_ago"/>
-<!--                app:chipBackgroundColor="@color/two_days_ago_back_color"-->
-<!--                android:textColor="@color/chip_text_color"-->
-<!--                android:textSize="@dimen/description_text_size"-->
-
+                android:text="@string/two_days_ago"
+                android:fontFamily="@font/karla"
+                android:textStyle="normal"
+                android:textColor="@color/grey_black"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_yesterday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:text="@string/one_day_ago"/>
-<!--                android:textColor="@color/chip_text_color"-->
-<!--                app:chipBackgroundColor="@color/yesterday_back_color"-->
-<!--                android:textSize="@dimen/description_text_size"-->
-
+                android:text="@string/one_day_ago"
+                android:fontFamily="@font/karla"
+                android:textStyle="normal"
+                android:textColor="@color/grey_black"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_today"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:text="@string/today"/>
-<!--                android:textColor="@color/chip_text_color"-->
-<!--                app:chipBackgroundColor="@color/today_back_color"-->
-<!--                android:textSize="@dimen/description_text_size"-->
+                android:text="@string/today"
+                android:fontFamily="@font/karla"
+                android:textStyle="normal"
+                android:textColor="@color/grey_black"/>
 
 </com.google.android.material.chip.ChipGroup>
         </LinearLayout>
@@ -64,20 +62,27 @@
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/search_wiki"
+            app:hintTextColor="@color/grey_black"
             app:counterEnabled="true"
             app:counterMaxLength="25"
             app:helperText="@string/wiki_helper_text"
+            app:helperTextTextColor="@color/lighter_grey"
+            app:hintAnimationEnabled="true"
             app:layout_constraintTop_toBottomOf="@id/photo_desсription"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_twotone_pageview_24"
-            app:endIconCheckable="true"
-            >
+            app:endIconCheckable="true">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/description_text_size"
+                android:textStyle="normal"
+                android:fontFamily="@font/karla"
+                android:textColor="@color/grey_black"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,6 +93,8 @@
             android:layout_marginTop="@dimen/margin_top"
             android:textSize="@dimen/text_size"
             android:textStyle="bold"
+            android:fontFamily="@font/karla"
+            android:textColor="@color/light_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chips_layout"
@@ -114,6 +121,9 @@
             android:layout_marginTop="@dimen/margin_top"
             android:text="@string/date_of_creation"
             android:textSize="@dimen/text_size"
+            android:fontFamily="@font/karla"
+            android:textColor="@color/grey_black"
+            android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/photo_of_the_day" />
@@ -125,6 +135,10 @@
             android:layout_marginTop="@dimen/margin_top"
             android:textSize="@dimen/description_text_size"
             android:textStyle="italic"
+            android:fontFamily="@font/karla"
+            android:textColor="@color/light_black"
+            android:textIsSelectable="true"
+            android:layout_marginStart="@dimen/epic_caption_padding"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/creationDate"

@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/description_text_size"
         android:textStyle="bold"
+        android:fontFamily="@font/karla"
+        android:textColor="@color/grey_black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,6 +23,8 @@
         app:layout_constraintStart_toEndOf="@id/note_title"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="@dimen/description_text_size"
+        android:fontFamily="@font/karla"
+        android:textColor="@color/grey_black"
         android:layout_marginStart="@dimen/add_item_icon_margin"
         android:textStyle="italic"/>
 
@@ -31,7 +35,9 @@
         app:layout_constraintStart_toEndOf="@id/note_description"
         app:layout_constraintEnd_toStartOf="@id/move_item_up_icon"
         app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="italic"
+        android:textStyle="normal"
+        android:fontFamily="@font/karla"
+        android:textColor="@color/light_black"
         android:textSize="@dimen/description_text_size"/>
     <ImageView
         android:layout_width="wrap_content"

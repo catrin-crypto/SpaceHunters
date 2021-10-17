@@ -44,7 +44,7 @@ class EpicPhotosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val duration: Long = 3000
-        binding.chooseEpicDateTv.animate().x(200f).setDuration(duration)
+        binding.chooseEpicDateTv.animate().x(150f).setDuration(duration)
         selectedDate = getString(R.string.epic_default_date)
         binding.epicCalendarIconImageView.setOnClickListener({
             val year = 2019

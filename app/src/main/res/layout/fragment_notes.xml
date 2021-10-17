@@ -10,10 +10,14 @@
         android:id="@+id/notes_header_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/a_place_for_your_very_important_notes"
+        android:fontFamily="@font/karla"
+        android:textStyle="bold"
+        android:textSize="@dimen/description_text_size"
+        android:textColor="@color/light_black"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:text="@string/a_place_for_your_very_important_notes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notes_fragment_recycler_view"

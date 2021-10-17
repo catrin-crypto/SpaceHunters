@@ -74,9 +74,11 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/search_wiki"
+                app:hintTextColor="@color/grey_black"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
                 app:helperText="@string/wiki_helper_text"
+                app:helperTextTextColor="@color/lighter_grey"
                 app:layout_constraintTop_toBottomOf="@id/photo_desсription"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +89,11 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_edit_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/description_text_size"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/karla"
+                    android:textColor="@color/grey_black"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,6 +104,8 @@
                 android:layout_marginTop="@dimen/margin_top"
                 android:textSize="@dimen/text_size"
                 android:textStyle="bold"
+                android:fontFamily="@font/karla"
+                android:textColor="@color/light_black"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/chips_layout"
                 tools:text="NoNamePhoto" />
@@ -123,6 +131,9 @@
                 android:layout_marginTop="@dimen/margin_top"
                 android:text="@string/date_of_creation"
                 android:textSize="@dimen/text_size"
+                android:fontFamily="@font/karla"
+                android:textColor="@color/grey_black"
+                android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/photo_of_the_day" />
@@ -134,6 +145,9 @@
                 android:layout_marginTop="@dimen/margin_top"
                 android:textSize="@dimen/description_text_size"
                 android:textStyle="italic"
+                android:fontFamily="@font/karla"
+                android:textColor="@color/grey_black"
+                android:textIsSelectable="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/creationDate"
@@ -149,6 +163,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/oops_error_occured"
+        android:fontFamily="@font/karla"
+        android:textStyle="normal"
         android:visibility="invisible"/>
 
     <FrameLayout

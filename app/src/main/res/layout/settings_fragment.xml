@@ -1,53 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/settings_layout"
     tools:context=".main.ui.SettingsFragment">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ExtraText">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/choose_theme_tv"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="@dimen/text_size"
-        android:text="@string/choose_your_spacehunters_app_theme" />
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/choose_theme_rg"
-        app:layout_constraintTop_toBottomOf="@id/choose_theme_tv">
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/marsian_theme_radiobutton"
+        <TextView
+            android:id="@+id/choose_theme_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/marsian_theme"
-            android:textSize="@dimen/description_text_size"/>
+            android:fontFamily="@font/karla"
+            android:text="@string/choose_your_spacehunters_app_theme"
+            android:textColor="@color/grey_black"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/standard_cosmic_theme_radiobutton"
+        <RadioGroup
+            android:id="@+id/choose_theme_rg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/standard_cosmic_theme"
-            android:textSize="@dimen/description_text_size"/>
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/default_theme_radiobutton"
-            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choose_theme_tv">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/marsian_theme_radiobutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/karla"
+                android:text="@string/marsian_theme"
+                android:textColor="@color/light_black"
+                android:textSize="@dimen/description_text_size"
+                android:textStyle="normal" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/standard_cosmic_theme_radiobutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/karla"
+                android:text="@string/standard_cosmic_theme"
+                android:textColor="@color/light_black"
+                android:textSize="@dimen/description_text_size"
+                android:textStyle="normal" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/default_theme_radiobutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/karla"
+                android:text="@string/default_theme"
+                android:textColor="@color/light_black"
+                android:textSize="@dimen/description_text_size"
+                android:textStyle="normal" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/welcome_tv"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/default_theme"
-            android:textSize="@dimen/description_text_size"/>
-    </RadioGroup>
+            android:layout_margin="@dimen/join_space_hunters_tv_margin"
+            android:fontFamily="@font/karla"
+            android:textColor="@color/grey_black"
+            android:textSize="@dimen/description_text_size"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choose_theme_rg" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

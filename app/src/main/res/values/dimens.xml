@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size">20sp</dimen>
+    <dimen name="text_size">15sp</dimen>
     <dimen name="margin_top">15dp</dimen>
     <dimen name="photo_width">1000dp</dimen>
     <dimen name="photo_height">500dp</dimen>
@@ -12,4 +12,5 @@
     <dimen name="view_width_for_constraint_percent">0dp</dimen>
     <dimen name="notes_recycler_view_margin_top">15dp</dimen>
     <dimen name="add_item_icon_margin">6dp</dimen>
+    <dimen name="join_space_hunters_tv_margin">100dp</dimen>
 </resources>

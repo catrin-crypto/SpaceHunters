@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/epic_caption_padding"
         android:textSize="@dimen/description_text_size"
+        android:fontFamily="@font/karla"
         android:textStyle="italic"
+        android:textColor="@color/grey_black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/no_caption_no_description_epic" />

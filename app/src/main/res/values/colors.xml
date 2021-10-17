@@ -5,8 +5,11 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="light_black">#E6000000</color>
+    <color name="grey_black">#B9000000</color>
+    <color name="lighter_grey">#92000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
     <color name="photo_of_the_day_text">#070797</color>
     <color name="chip_text_color">#E8D95A</color>
     <color name="two_days_ago_back_color">#381F65</color>
