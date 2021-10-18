@@ -1,77 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/note_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/description_text_size"
-        android:textStyle="bold"
         android:fontFamily="@font/karla"
         android:textColor="@color/grey_black"
+        android:textSize="@dimen/description_text_size"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/note_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/note_description"
-        app:layout_constraintStart_toEndOf="@id/note_title"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="@dimen/description_text_size"
+        android:layout_marginStart="@dimen/add_item_icon_margin"
         android:fontFamily="@font/karla"
         android:textColor="@color/grey_black"
-        android:layout_marginStart="@dimen/add_item_icon_margin"
-        android:textStyle="italic"/>
+        android:textSize="@dimen/description_text_size"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@id/note_title"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/note_creation_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/note_creation_date"
-        app:layout_constraintStart_toEndOf="@id/note_description"
-        app:layout_constraintEnd_toStartOf="@id/move_item_up_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="normal"
         android:fontFamily="@font/karla"
         android:textColor="@color/light_black"
-        android:textSize="@dimen/description_text_size"/>
+        android:textSize="@dimen/description_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toStartOf="@id/move_item_up_icon"
+        app:layout_constraintStart_toEndOf="@id/note_description"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/add_item_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="@dimen/add_item_icon_margin"
-        android:src="@drawable/ic_baseline_add_circle_outline_24"/>
-
-    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/add_item_icon_margin"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/remove_item_icon"
-        app:layout_constraintTop_toBottomOf="@id/add_item_icon"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/add_item_icon_margin"
-        android:src="@drawable/ic_baseline_remove_circle_outline_24"/>
+        android:src="@drawable/ic_baseline_remove_circle_outline_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_item_icon" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/move_item_up_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/add_item_icon"
-        android:layout_margin="@dimen/add_item_icon_margin"
-        android:src="@drawable/ic_baseline_arrow_drop_up_24"/>
-    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/move_item_down_icon"
-        app:layout_constraintTop_toBottomOf="@id/move_item_up_icon"
-        app:layout_constraintEnd_toStartOf="@id/remove_item_icon"
         android:layout_margin="@dimen/add_item_icon_margin"
-        android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
+        android:src="@drawable/ic_baseline_arrow_drop_up_24"
+        app:layout_constraintEnd_toStartOf="@id/add_item_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/move_item_down_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/add_item_icon_margin"
+        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+        app:layout_constraintEnd_toStartOf="@id/remove_item_icon"
+        app:layout_constraintTop_toBottomOf="@id/move_item_up_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

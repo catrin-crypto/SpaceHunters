@@ -13,4 +13,6 @@
     <dimen name="notes_recycler_view_margin_top">15dp</dimen>
     <dimen name="add_item_icon_margin">6dp</dimen>
     <dimen name="join_space_hunters_tv_margin">100dp</dimen>
+    <dimen name="splash_image_width">200dp</dimen>
+    <dimen name="splash_image_height">300dp</dimen>
 </resources>

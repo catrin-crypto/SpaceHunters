@@ -20,18 +20,19 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/epic_caption_padding"
+                android:paddingBottom="@dimen/notes_recycler_view_margin_top"
                 android:text="@string/choose_the_date_from_the_period_of_fhaz_camera_mission_06_08_2012_03_06_2015"
                 android:textColor="@color/light_black"
                 android:fontFamily="@font/karla"
                 android:textSize="@dimen/description_text_size"
-                android:textStyle="bold" />
+                android:fontWeight="400"
+                android:textStyle="normal" />
 
             <LinearLayout
                 android:id="@+id/calendarIcon_plus_chosen_date_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/epic_caption_padding"
+                android:paddingBottom="@dimen/notes_recycler_view_margin_top"
                 android:orientation="horizontal">
 
                 <ImageView

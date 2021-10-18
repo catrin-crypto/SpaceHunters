@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/coordinator_layout"
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/chips_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chips_layout"
-                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toStartOf="parent"
-                android:orientation="horizontal">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chip_group"
@@ -39,10 +38,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/two_days_ago" />
-                    <!--                app:chipBackgroundColor="@color/two_days_ago_back_color"-->
-                    <!--                android:textColor="@color/chip_text_color"-->
-                    <!--                android:textSize="@dimen/description_text_size"-->
-
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_yesterday"
@@ -50,10 +45,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/one_day_ago" />
-                    <!--                android:textColor="@color/chip_text_color"-->
-                    <!--                app:chipBackgroundColor="@color/yesterday_back_color"-->
-                    <!--                android:textSize="@dimen/description_text_size"-->
-
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_today"
@@ -61,39 +52,36 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/today" />
-                    <!--                android:textColor="@color/chip_text_color"-->
-                    <!--                app:chipBackgroundColor="@color/today_back_color"-->
-                    <!--                android:textSize="@dimen/description_text_size"-->
 
                 </com.google.android.material.chip.ChipGroup>
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/search_wiki"
-                app:hintTextColor="@color/grey_black"
                 app:counterEnabled="true"
                 app:counterMaxLength="25"
+                app:endIconCheckable="true"
+                app:endIconDrawable="@drawable/ic_twotone_pageview_24"
+                app:endIconMode="custom"
                 app:helperText="@string/wiki_helper_text"
                 app:helperTextTextColor="@color/lighter_grey"
-                app:layout_constraintTop_toBottomOf="@id/photo_desсription"
-                app:layout_constraintStart_toStartOf="parent"
+                app:hintTextColor="@color/grey_black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:endIconMode="custom"
-                app:endIconDrawable="@drawable/ic_twotone_pageview_24"
-                app:endIconCheckable="true"
-                >
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/photo_desсription">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/description_text_size"
-                    android:textStyle="normal"
                     android:fontFamily="@font/karla"
-                    android:textColor="@color/grey_black"/>
+                    android:textColor="@color/grey_black"
+                    android:textSize="@dimen/description_text_size"
+                    android:textStyle="normal" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,10 +90,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_top"
-                android:textSize="@dimen/text_size"
-                android:textStyle="bold"
                 android:fontFamily="@font/karla"
                 android:textColor="@color/light_black"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/chips_layout"
                 tools:text="NoNamePhoto" />
@@ -115,43 +103,42 @@
                 android:id="@+id/photo_of_the_day"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_top"
-                android:layout_gravity= "center"
+                android:contentDescription="@string/photo_of_the_day"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/photo_title"
-                android:contentDescription="@string/photo_of_the_day"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/photo_title" />
 
             <TextView
                 android:id="@+id/creationDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_top"
-                android:text="@string/date_of_creation"
-                android:textSize="@dimen/text_size"
+                android:paddingBottom="@dimen/epic_caption_padding"
                 android:fontFamily="@font/karla"
+                android:text="@string/date_of_creation"
                 android:textColor="@color/grey_black"
+                android:textSize="@dimen/text_size"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/photo_of_the_day" />
 
             <TextView
+                android:id="@+id/photo_desсription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/photo_desсription"
                 android:layout_marginTop="@dimen/margin_top"
-                android:textSize="@dimen/description_text_size"
-                android:textStyle="italic"
                 android:fontFamily="@font/karla"
                 android:textColor="@color/grey_black"
                 android:textIsSelectable="true"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/description_text_size"
+                android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/creationDate"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/creationDate" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -162,10 +149,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/oops_error_occured"
         android:fontFamily="@font/karla"
+        android:text="@string/oops_error_occured"
         android:textStyle="normal"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <FrameLayout
         android:id="@+id/loadingLayout"
