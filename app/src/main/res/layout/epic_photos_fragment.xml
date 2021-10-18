@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/epic_constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.ui.EpicPhotosFragment">
+
+    <TextView
+        android:id="@+id/choose_epic_date_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_bottom_epic_choose_date_tv"
+        android:paddingBottom="@dimen/margin_bottom_epic_choose_date_tv"
+        android:text="@string/tap_calendar_icon_and_choose_the_date"
+        android:textColor="@color/light_black"
+        android:fontFamily="@font/karla"
+        android:textSize="@dimen/description_text_size"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/epic_calendar_icon_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/epic_calendar_icon_image_view"
+        android:layout_width="@dimen/view_width_for_constraint_percent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_edit_calendar_24"
+        android:paddingBottom="@dimen/notes_recycler_view_margin_top"
+        app:layout_constraintEnd_toStartOf="@id/user_chosen_date_epic_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_epic_date_tv"
+        app:layout_constraintWidth_percent="0.4"
+        tools:ignore="Suspicious0dp" />
+
+    <TextView
+        android:id="@+id/user_chosen_date_epic_tv"
+        android:layout_width="@dimen/view_width_for_constraint_percent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/description_text_size"
+        android:fontFamily="@font/karla"
+        android:textColor="@color/grey_black"
+        android:textStyle="normal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/epic_calendar_icon_image_view"
+        app:layout_constraintTop_toBottomOf="@id/choose_epic_date_tv"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/epic_fragment_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/epic_calendar_icon_image_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
