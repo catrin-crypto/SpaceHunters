@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Space Hunters</string>
+    <string name="photo_of_the_day">Photo of the day</string>
+    <string name="date_of_creation">Date of creation</string>
+    <string name="description_text">Description of photo</string>
+    <string name="oops_error_occured">Oops! Error occured -> </string>
+    <string name="search_wiki">search Wiki</string>
+    <string name="wiki_helper_text">Wiki helper</string>
+    <string name="two_days_ago">Two Days Ago</string>
+    <string name="one_day_ago">One Day Ago</string>
+    <string name="today">Today</string>
+    <string name="picture_description_will_load_here">Picture Description will load here</string>
+    <string name="settings">settings</string>
+    <string name="main">main</string>
+    <string name="favorites">favorites</string>
+    <string name="choose_your_spacehunters_app_theme">Choose your SpaceHunters App theme</string>
+    <string name="marsian_theme">Marsian theme</string>
+    <string name="standard_cosmic_theme">Standard cosmic theme</string>
+    <string name="default_theme">Default theme</string>
+    <string name="picture_of_the_day">Picture of the day</string>
+    <string name="no_description">No description</string>
+    <string name="no_photo_this_day">Nasa\'s got no photo this day(</string>
+    <string name="cosmic_weather">Cosmic weather</string>
+    <string name="mars">Mars</string>
+    <string name="earth">Earth</string>
+    <string name="photo_from_mars_id">Photo from Mars ID</string>
+    <string name="choose_the_date_from_the_period_of_fhaz_camera_mission_06_08_2012_03_06_2015">Choose the date from the period of FHAZ-camera mission: 06.08.2012 - 03.06.2015</string>
+    <string name="mars_photo">mars_photo</string>
+    <string name="mars_image_id_photo_signature">\"Mars image ID : %d \"</string>
+    <string name="tap_calendar_icon_and_choose_the_date">Tap calendar icon and choose the date</string>
+    <string name="no_caption_no_description_epic">No description provided(</string>
+    <string name="earth_photo_from_nasa_epic_collection">Earth photo from NASA EPIC collection</string>
+    <string name="epic_default_date">2019-05-30</string>
+    <string name="spacehunters_is_a_fantastic_application_specially_developed_for_each_space_lover_of_this_universe_take_a_look_at_theese_photos_from_the_great_red_planet_mars_it_could_probably_become_a_new_home_for_the_humanity_someday">SpaceHunters is a fantastic application, specially developed for each space lover of this Universe. Take a look at theese photos from the great red planet Mars. It could probably become a new home for the humanity someday.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="toast_for_favourites_fragment">Favourites will be here</string>
+    <string name="a_place_for_your_very_important_notes">A place for your very important notes</string>
+    <string name="notes">notes</string>
+    <string name="join_the_space_hunters">Join the Space Hunters</string>
+</resources>

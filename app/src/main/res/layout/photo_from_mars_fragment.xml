@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.ui.PhotoFromMarsFragment">
+
+    <ScrollView
+        android:id="@+id/scroll_view_mars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="outsideInset">
+
+        <LinearLayout
+            android:id="@+id/mars_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/notes_recycler_view_margin_top"
+                android:text="@string/choose_the_date_from_the_period_of_fhaz_camera_mission_06_08_2012_03_06_2015"
+                android:textColor="@color/light_black"
+                android:fontFamily="@font/karla"
+                android:textSize="@dimen/description_text_size"
+                android:fontWeight="400"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:id="@+id/calendarIcon_plus_chosen_date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/notes_recycler_view_margin_top"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/calendar_icon_image_view"
+                    android:layout_width="@dimen/view_width_for_constraint_percent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_edit_calendar_24" />
+
+                <TextView
+                    android:id="@+id/user_chosen_date_tv"
+                    android:layout_width="@dimen/view_width_for_constraint_percent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:textSize="@dimen/description_text_size"
+                    android:fontFamily="@font/karla"
+                    android:textColor="@color/grey_black"
+                    android:textStyle="normal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/photo_from_mars_and_id_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_view_mars"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:contentDescription="@string/mars_photo"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photo_from_mars_id"
+                    android:fontFamily="@font/karla"
+                    android:textColor="@color/grey_black"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>
+
